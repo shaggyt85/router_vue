@@ -1,9 +1,16 @@
-<script setup>
-
+<script>
+  export default {
+    data() {
+      return {
+        username: ''
+      }
+    }
+  }
 </script>
 
 <template>
   <main>
-    Home
+        <h3>Introduce tu nombre de usuario {{ username }}</h3>
+        <input placeholder="username" v-model="username">
   </main>
 </template>

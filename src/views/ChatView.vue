@@ -1,0 +1,9 @@
+<script></script>
+<template>
+    <aside>
+        Chats
+    </aside>
+    <article>
+        Mensajes
+    </article>
+</template>
