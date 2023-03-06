@@ -4,8 +4,17 @@ import HomeView from "../views/HomeView.vue"
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    {path: '/', component: HomeView, name: "home"  },
-    {path: '/about', component: import('../views/AboutView.vue') },
+    // {path: "/home", redirect: {name: "home"}},
+    {path: '/', name: 'home', component: HomeView, alias: '/home'  },
+    {path: '/session', component: import('../views/SessionView.vue'),
+  children: [
+    {path: "", components: {
+      default: import("../views/LoginView.vue"),
+      register: import("../views/RegisterView.vue")
+    }}
+  ]
+ },
+    {path: '/about', name: 'about', component: import('../views/AboutView.vue') },
     {
       path: '/chats', 
       component: import('../views/ChatsView.vue'),
